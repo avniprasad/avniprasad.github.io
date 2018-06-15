@@ -1,94 +1,460 @@
-<!DOCTYPE html>
+body {
+	margin: 0;
+}
 
-<html>
-<head>
-  <title>Avni Prasad</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- FAVICON -->
-  <link href="img/favicon-32x32.png" rel="shortcut icon" type="image/x-icon" />
-<!-- STYLES -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-<!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-  </head>
-<body>
+p {
+	font-family: 'Open Sans','Helvetica',sans-serif;
+}
 
-  <!-- HERO -->
-  <div id="name-plate">
-    <img id="hero" src="img/ash.gif">
-  </div>
+/* -------- BODY ----------*/
+.body-content {
+	margin: 0 auto;
+	padding-top: 40px;
+}
 
-  <!--  MAIN NAV -->
-  <div id="navBar">
-    <ul>
-      <li id="work" class="section selected-nav">
-          <p class="nav-item">work</p>
-      </li>
-      <li id="fun" class="section">
-          <p class="nav-item">fun</p>
-      </li>
-      <li id="about" class="section">
-          <p class="nav-item">about</p>
-      </li>
-      <li class="section">
-        <a href="resume.pdf" target="_blank">
-          <p class="nav-item">résumé</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <!-- END MAIN NAV -->
+/* -------- TOP  ----------*/
+#name-plate {
+	margin: 100px 0 50px 0;
+	text-align: center;
+}
 
-  <!-- MAIN CONTAINER -->
+#flipper {
+	text-align: center;
+  color:#999;
+  text-transform: uppercase;
+  font-size:40px;
+  font-weight:bold;
+  width:100%;
+  display:block;
+}
 
-  <div id="main-container">
+#flip {
+  height:50px;
+  overflow:hidden;
+}
 
-    <div id="work-section" class="container-fluid"></div> <!-- from spreadsheet/json -->
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:50px;
+  margin-bottom:45px;
+  display:inline-block;
+}
 
-    <div id="fun-section" class="container-fluid"></div> <!-- from spreadsheet/json -->
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background:#8d7647;
+}
+#flip div:first-child div {
+  background:#d58a57;
+}
+#flip div:last-child div {
+  background:#728fa6;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+#top {
+	width: 45%;
+}
+
+/* -------- NAVIGATION ----------*/
+#navBar {
+	text-transform: uppercase;
+	font-size: 1.25em;
+	text-align: center;
+}
+
+#navBar ul {
+	padding-left: 0;
+}
+
+li.section {
+	margin: 0 4%;
+	padding-bottom: 5px;
+	display: inline-block;
+}
+
+.nav-item {
+	margin: 0;
+	color: #adadad;
+	letter-spacing: .08em;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#work .nav-item {
+	color: #000;
+}
+
+#navBar ul li:hover {
+	border-bottom: 4px solid #adadad;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+li.selected-nav {
+	border-bottom: 4px solid #000;
+	/*#5dadc4*/
+}
+
+#navBar ul li.selected-nav:hover {
+	border-bottom: 4px solid #000;
+}
+
+a:hover {
+	text-decoration: none;
+}
 
 
-    <!-- ABOUT SECTION -->
-    <div id="about-section">
-      <img src="img/ash.png" id="headshot">
-      <p id="bio">
-        <span>Hi I'm Ashley!</span><br>
-        (Ashwu if you're into nicknames)
-        <br><br>
-        I'm a graphics journalist and interactives designer at New York Magazine. I recently graduated from Northwestern University with a bachelor's in journalism and a Spanish minor. Past gigs include <a href="https://twitter.com/PostGraphics">The Washington Post graphics team</a>, <a href="http://knightlab.northwestern.edu/">Knight Lab</a>, <a href="https://twitter.com/LATimesGraphics">Los Angeles Times graphics team</a> and the <a href="https://twitter.com/LNdata">LA NACION data team</a> in Buenos Aires.
-        <br><br>
-        I enjoy cooking massive meals, wearing fun socks, speaking Spanglish, rewatching The Office and listening to <a href="https://www.youtube.com/watch?v=b8-tXG8KrWs" target="_blank">this song</a> to get me through some especially rough Mondays.
-      </p>
-    </div> <!-- end "ABOUT" section -->
+/* -------- WORK CONTAINER ----------*/
 
-  </div> <!-- END MAIN CONTAINER -->
+#main-container {
+	margin: 75px auto 0 auto;
+	width: 90%;
+	overflow: hidden;
+}
 
+#work-section {
+	margin: 10px auto 0 auto;
+}
 
-  <div class="social">
-    <ul>
-      <li><a href="mailto:ashh.wu@gmail.com" target="_blank"><i class="fa fa-envelope fa-2x"></i></a></li>
-      <li><a href="https://twitter.com/ashhwu" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
-      <li><a href="http://linkd.in/1rU4Az8" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
-      <li><a href="https://github.com/ashwu" target="_blank"><i class="fa fa-github fa-2x"></i></a> </li>
-    </ul>
-  </div>
+.col-xs-12 {
+	position: relative;
+	margin-bottom: 25px;
+}
 
-  <footer>
-    <p id="copyright"> ASHLEY WU &copy; 2017 </p>
-  <footer>
+.thumb {
+	width: 100%;
+}
+
+.row {
+	margin-bottom: 20px;
+}
 
 
+#fun-section {
+	display: none;
+	margin: 10px auto 0 auto;
+}
 
-  <!-- JAVASCRIPT -->
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-  <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+/* -------- CORNER RIBBONS (adapted from trapezoid https://css-tricks.com/examples/ShapesOfCSS/) ----------*/
 
-</body>
+.ribbon{
+	padding: 2px 5px;
+	font-size: 10px;
+	font-weight: normal;
+	background-color: rgba(43,43,43,0.7);
+	color: #fff;
+	border-radius: 3px;
+	position: absolute;
+	bottom: 20px;
+	left: 21px;
+	text-transform: uppercase;
+}
 
-</html>
+.col-xs-12:hover span.ribbon {
+	opacity: 0;
+	transition: 0.1s;
+}
+
+
+/*--------- ZOE EFFECT (adapted from http://tympanus.net/Development/HoverEffectIdeas/index.html) --------------*/
+
+figcaption {
+	padding: 0.5em;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+.effect-zoe:hover figcaption {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.pub {
+	padding: 3px 6px;
+	font-size: 12px;
+	background-color: #2b2b2b;
+	color: #fff;
+	font-weight: normal;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+
+.headline {
+	font-size: 13px;
+	font-weight: bold;
+	position: absolute;
+	bottom: 1.6em;
+	margin: 0;
+	padding: 20px;
+	color: #000;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+}
+
+span.subhead {
+	font-weight: normal;
+}
+
+.effect-zoe:hover p.headline {
+	opacity: 1;
+}
+
+.thumb:hover {
+	opacity: 0.15;
+	transition: 0.25s;
+
+}
+
+.effect-zoe:hover .thumb {
+	opacity: 0.15;
+	transition: 0.2s;
+	outline: 3px solid #000;
+}
+
+.mobile-caption {
+	display: none;
+}
+
+.info {
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+/* -------- ABOUT ME ----------*/
+
+#about-section {
+	width: 70%;
+	margin: 0 auto;
+	display: none;
+}
+
+#headshot{
+	width: 50%;
+	float: left;
+}
+
+#bio {
+	font-size: 13.5px;
+	width: 42%;
+	float: right;
+}
+
+#bio span {
+	font-weight: bold;
+	font-size: 1.15em;
+	color: #000;
+}
+
+#bio a {
+	color: #4a8a9c;
+}
+
+#bio a:hover {
+	text-decoration: underline;
+}
+
+#bio li {
+	margin-left: 20px;
+}
+
+
+/*------- SOCIAL ICONS ----------*/
+
+.social {
+    padding: 100px 0 50px 0;
+    clear: both;
+}
+
+.social ul {
+	text-align: center;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.social ul li {
+	display: inline;
+	margin: 0 15px;
+	padding-left: 0;
+}
+
+.fa {
+	color: #adadad;
+	font-size: 15px;
+}
+
+.fa:hover {
+	color: #000;
+	transition: 0.2s;
+}
+
+#copyright{
+	font-size: 0.9em;
+	font-weight: 300;
+	color: #adadad;
+	text-align: center;
+	padding: 30px 0;
+	clear: both;
+}
+
+
+/* ---------- MEDIA QUERIES ----------------*/
+
+@media screen and (max-width: 1000px) {
+	#about-section {
+		width: 80%;
+	}
+
+	#hero {
+		width: 45%;
+	}
+
+}
+
+@media screen and (max-width: 850px) {
+	#about-section {
+		width: 90%;
+	}
+
+	#bio {
+		font-size: 12px;
+	}
+
+	.headline {
+		font-size: 12px;
+		bottom: 1.4em;
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.work-container {
+		margin-top: 50px;
+	}
+
+	/*.col-xs-4 {
+		width: 100%;
+		margin-bottom: 15px;
+	}*/
+
+	figcaption {
+		display: none;
+	}
+
+	.ribbon {
+		display: none;
+	}
+
+	.effect-zoe:hover .thumb {
+		opacity: 1;
+		transition: 0;
+		border: 0;
+		outline: 0;
+	}
+
+	.mobile-caption {
+		display: block;
+		margin: 10px 0 25px 0;
+	}
+
+	.pub {
+		background-color: #aaaaaa;
+	}
+
+	.info {
+		font-weight: normal;
+	}
+
+	#about-section {
+		width: 97%;
+	}
+
+	.social {
+	    padding-top: 50px;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	#work-section, #fun-section {
+		width: 90%;
+	}
+
+	#name-plate {
+		margin-top: 70px;
+	}
+
+}
+
+@media screen and (max-width: 560px) {
+	#hero {
+		width: 56%;
+	}
+
+	#navBar {
+		width: 80%;
+    	margin: 0 auto;
+	}
+
+	#headshot{
+		width: 75%;
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+
+	#bio {
+		width: 75%;
+		float: none;
+		font-size: 13.5px;
+		margin: 20px auto 0 auto;
+	}
+
+	.info {
+		font-size: 12px;
+	}
+
+}
+
+@media screen and (max-width: 390px) {
+
+	.nav-item {
+		font-size: 12px;
+	}
+
+}
+
+@media screen and (max-width: 340px) {
+
+	#navBar {
+		width: 90%;
+	}
+
+	li.section {
+		margin: 0 2.5%;
+	}
+
+	#copyright{
+		font-size: 0.65em;
+	}
+
+}
